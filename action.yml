@@ -16,6 +16,9 @@ inputs:
   description:
     description: Issue description
     required: false
+  labels:
+    description: An array of strings used as labels in the ticket
+    required: false
 outputs:
   issue:
     description: Key of the newly created issue

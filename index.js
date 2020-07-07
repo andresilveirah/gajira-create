@@ -29,9 +29,7 @@ async function exec () {
 
       const yamledResult = YAML.stringify(result)
       const extendedConfig = Object.assign({}, config, result)
-
       fs.writeFileSync(configPath, YAML.stringify(extendedConfig))
-
       return fs.appendFileSync(cliConfigPath, yamledResult)
     }
 
@@ -49,7 +47,7 @@ function parseArgs () {
     issuetype: core.getInput('issuetype'),
     summary: core.getInput('summary'),
     description: core.getInput('description'),
-    fields: false // TODO
+    labels: core.getInput('labels')
   }
 }
 
