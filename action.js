@@ -25,11 +25,15 @@ module.exports = class {
         issuetype: { name: argv.issuetype },
         description: argv.description,
         summary: argv.summary,
-        labels: argv.labels
+        labels: this.parseLabels(argv.labels)
       }
     })
 
     return { issue: issue.key }
+  }
+
+  parseLabels(labelsString) {
+    return labelsString.split(',')
   }
 
   preprocessArgs () {

@@ -17,8 +17,9 @@ inputs:
     description: Issue description
     required: false
   labels:
-    description: An array of strings used as labels in the ticket
+    description: A comma separated string. Each value between commas will be used as individual label.
     required: false
+    default: ""
 outputs:
   issue:
     description: Key of the newly created issue
