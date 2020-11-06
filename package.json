@@ -11,17 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.4",
-    "node-fetch": "^2.6.0",
+    "@actions/core": "^1.2.6",
+    "node-fetch": "^2.6.1",
     "require-directory": "^2.1.1",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
     "@atlassian-partner-engineering/eslint-config": "^3.1.1",
     "@zeit/ncc": "^0.22.3",
-    "eslint": "^7.4.0",
-    "jest": "^26.1.0",
-    "nock": "^13.0.2"
+    "eslint": "^7.12.1",
+    "jest": "^26.6.3",
+    "nock": "^13.0.4"
   },
   "jest": {
     "testPathIgnorePatterns": [
