@@ -1,5 +1,3 @@
-const { get } = require('lodash')
-
 const serviceName = 'jira'
 const { format } = require('url')
 const client = require('./client')(serviceName)
@@ -11,51 +9,11 @@ class Jira {
     this.email = email
   }
 
-  async getCreateMeta (query) {
-    return this.fetch('getCreateMeta', { pathname: '/rest/api/2/issue/createmeta', query })
-  }
-
   async createIssue (body) {
     return this.fetch('createIssue',
       { pathname: '/rest/api/2/issue' },
-      { method: 'POST', body })
-  }
-
-  async getIssue (issueId, query = {}) {
-    const { fields = [], expand = [] } = query
-
-    try {
-      return this.fetch('getIssue', {
-        pathname: `/rest/api/2/issue/${issueId}`,
-        query: {
-          fields: fields.join(','),
-          expand: expand.join(','),
-        },
-      })
-    } catch (error) {
-      if (get(error, 'res.status') === 404) {
-        return
-      }
-
-      throw error
-    }
-  }
-
-  async getIssueTransitions (issueId) {
-    return this.fetch('getIssueTransitions', {
-      pathname: `/rest/api/2/issue/${issueId}/transitions`,
-    }, {
-      method: 'GET',
-    })
-  }
-
-  async transitionIssue (issueId, data) {
-    return this.fetch('transitionIssue', {
-      pathname: `/rest/api/3/issue/${issueId}/transitions`,
-    }, {
-      method: 'POST',
-      body: data,
-    })
+      { method: 'POST', body }
+    )
   }
 
   async fetch (apiMethodName,

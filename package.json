@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.2.4",
-    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "require-directory": "^2.1.1",
     "yaml": "^1.10.0"
@@ -22,22 +21,11 @@
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.4.0",
     "jest": "^26.1.0",
-    "jest-junit": "11.0.1",
     "nock": "^13.0.2"
   },
   "jest": {
     "testPathIgnorePatterns": [
-      "/helpers/",
-      "/node_modules/"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "clover"
-    ],
-    "coverageDirectory": "../test-results"
+      "/helpers/"
+    ]
   }
 }
